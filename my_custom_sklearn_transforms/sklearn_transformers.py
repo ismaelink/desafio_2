@@ -18,15 +18,17 @@ class DropColumns(BaseEstimator, TransformerMixin):
 # Alterando a coluna "PERFIL"
 def transforme_coluna(value):
         if value == "EXCELENTE":
-            return int(0)
+            return float(0)
         elif value == "MUITO BOM":
-            return int(1)
+            return float(1)
         elif value == "HUMANAS":
-            return int(2)
+            return float(2)
         elif value == "EXATAS":
-            return int(3)
+            return float(3)
         elif value == "DIFICULDADE":
-            return int(4)
+            return float(4)
+        elif isinstance(value, str) == False:
+            return float(value)
 
 
 
